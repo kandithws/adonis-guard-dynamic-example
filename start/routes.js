@@ -28,7 +28,7 @@ Route.group(() => {
    .apiOnly()
    .except(['store'])
    .validator( new Map([
-     [['users.index', 'users.show', 'users.delete'], ['BaseValidator']],
+     [['users.index', 'users.show', 'users.destroy'], ['BaseValidator']],
      [['users.update'], ['User/Update']],
    ]))
 
@@ -36,7 +36,7 @@ Route.group(() => {
    .resource('articles', 'ArticleController')
    .apiOnly()
    .validator( new Map([
-     [['articles.index', 'articles.show', 'articles.delete'], ['BaseValidator']],
+     [['articles.index', 'articles.show', 'articles.destroy'], ['BaseValidator']],
      [['articles.store'], ['Article/Store']],
      [['articles.update'], ['Article/Update']],
    ]))
