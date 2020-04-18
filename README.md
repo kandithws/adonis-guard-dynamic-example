@@ -1,28 +1,12 @@
-# Adonis API application
+# Adonis RESTFUL adonis-guard example application
 
-This is the boilerplate for creating an API server in AdonisJs, it comes pre-configured with.
+An example of using [RomainLanz/adonis-guard](https://github.com/RomainLanz/adonis-guard) Authorization with dynamic rules finding.
 
-1. Bodyparser
-2. Authentication
-3. CORS
-4. Lucid ORM
-5. Migrations and seeds
+The core logic is implemented at `BaseValidator.js`
 
-## Setup
+## Description
 
-Use the adonis command to install the blueprint
+For RESTFUL API, the `BaseValidator`:
 
-```bash
-adonis new yardstick --api-only
-```
-
-or manually clone the repo and then run `npm install`.
-
-
-### Migrations
-
-Run the following command to run startup migrations.
-
-```js
-adonis migration:run
-```
+ * Matches `ResourceController` with `App/Policies/ResourcePolicy` and authorize the route
+ * Find and load `Resource` from DB if the id is set. E.g. if request `resources/:id` is given, the validator loads the resource and pass it through the controller context.  
