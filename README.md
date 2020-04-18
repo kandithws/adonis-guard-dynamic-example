@@ -2,7 +2,7 @@
 
 An example of using [RomainLanz/adonis-guard](https://github.com/RomainLanz/adonis-guard) Authorization with dynamic rules finding.
 
-The core logic is implemented at `BaseValidator.js`
+The core logic is implemented at `App/Validators/BaseValidator.js`
 
 ## Description
 
