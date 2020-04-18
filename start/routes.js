@@ -21,7 +21,7 @@ Route.get('/', () => {
 })
 
 Route.post( '/login', 'LoginController.login' ).validator( 'Login' )
-
+Route.post( '/users', 'UserController.store' ).validator( 'User/Store' )
 Route.group(() => {
   Route
    .resource('users', 'UserController')

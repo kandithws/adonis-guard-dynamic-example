@@ -8,8 +8,15 @@ class Store extends BaseValidator {
       email: 'required|email|unique:users,email',
       password: 'required|string',
       username: 'required|string|unique:users,username',
-      role: 'string'
     }
+  }
+
+
+  /**
+   *  Overide to implement special cases auth
+   */
+  async authorize() {
+    return true
   }
 }
 

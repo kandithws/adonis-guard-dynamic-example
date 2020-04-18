@@ -14,11 +14,11 @@ class UserPolicy {
   }
 
   update (user, resource) {
-    return user.role === 'admin' || user.id === resource.user_id
+    return user.role === 'admin' || user.id === resource.id
   }
 
   destroy (user, resource) {
-    return user.role === 'admin' || user.id === resource.user_id
+    return user.role === 'admin' || user.id === resource.id
   }
 }
 

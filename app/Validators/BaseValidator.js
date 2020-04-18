@@ -41,6 +41,9 @@ class BaseValidator {
     return null
   }
 
+  get validateAll() {
+    return true
+  }
 
   /**
    * @virtual

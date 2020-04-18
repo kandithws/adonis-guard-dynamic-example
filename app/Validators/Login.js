@@ -7,7 +7,6 @@ class Login extends BaseValidator {
     return {
       email: 'required_without_any:username|email',
       username: 'required_without_any:email|string',
-      password: 'required|string'
     }
   }
 

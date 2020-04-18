@@ -8,12 +8,10 @@ class UserController {
     return response.status(200).send({ users: await User.all() })
   }
 
-  async store({ auth, request }) {
-    let userParams = request.only(['email', 'password', 'username', 'role'])
+  async store({ request, response }) {
+    let userParams = request.only(['email', 'password', 'username'])
 
-    if (auth.user.role !== 'admin') {
-      userParams.role = 'user'
-    }
+    userParams.role = 'user'
 
     return await User.create(userParams)
   }
@@ -23,7 +21,7 @@ class UserController {
   }
 
   async update({ auth, request, response, resource }) {
-    let userParams = request.only(['email', 'password', 'first_name', 'last_name', 'role'])
+    let userParams = request.only(['email', 'password', 'username', 'role'])
     if (auth.user.role !== 'admin') {
       userParams.role = 'user'
     }
